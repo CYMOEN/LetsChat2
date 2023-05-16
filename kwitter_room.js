@@ -1,6 +1,7 @@
 const firebaseConfig = {
     apiKey: "AIzaSyCYh45EaqCzAROJqnFeK0okgu3F7iQuWYs",
-    authDomain: "chatterbox-34d14.firebaseapp.com",
+    authDoma
+    : "chatterbox-34d14.firebaseapp.com",
     databaseURL: "https://chatterbox-34d14-default-rtdb.firebaseio.com",
     projectId: "chatterbox-34d14",
     storageBucket: "chatterbox-34d14.appspot.com",
@@ -8,6 +9,8 @@ const firebaseConfig = {
     appId: "1:940703225313:web:a6eccd9e873e17d95f6ea0",
     measurementId: "G-Z5CN5RGZM9"
   };
+
+  user_name = localStorage.getItem("user_name");
 
   document.getElementById("user_name").innerHTML = "Welcome " + user_name + "!";
 
@@ -39,4 +42,10 @@ function redirectToRoomName(name)
       console.log(name);
       localStorage.setItem("room_name", name);
       window.location = "kwitter_page.html";
+}
+
+function logout() {
+      localStorage.removeItem("user_name");
+      localStorage.removeItem("room_name");
+      window.location = "index.html";
 }
